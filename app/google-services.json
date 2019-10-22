@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "917963172385",
+    "firebase_url": "https://notesapp-a738b.firebaseio.com",
+    "project_id": "notesapp-a738b",
+    "storage_bucket": "notesapp-a738b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917963172385:android:9050ab688fae7b40b01160",
+        "android_client_info": {
+          "package_name": "com.example.moneymanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917963172385-7hd32e1a13t5t7nd6kq39cpmmklon3qu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.moneymanager",
+            "certificate_hash": "db92d15db6985d880db2b1c8584c30156186c43f"
+          }
+        },
+        {
+          "client_id": "917963172385-3u963gfm67s0t3pb3imc0nqgkfra38rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzTfvpbdaHA_-zJS3HelrhMcIwgJPyMDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917963172385-3u963gfm67s0t3pb3imc0nqgkfra38rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
