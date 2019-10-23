@@ -4,11 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".SignUpActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"/>
+        android:textSize="42sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="@string/app_name"/>
+    <EditText
+        android:id="@+id/signUpMail"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <EditText
+        android:id="@+id/signUpPassword"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <EditText
+        android:id="@+id/ConfirmPassword"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <Button
+        android:id="@+id/SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textSize="22sp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -5,4 +5,5 @@
     <string name="login">Login</string>
     <string name="new_here_sign_up_now">New here? Sign Up Now</string>
     <string name="sign_up">Sign Up</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
