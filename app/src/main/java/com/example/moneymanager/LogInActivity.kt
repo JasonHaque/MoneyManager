@@ -17,10 +17,9 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
         bindListeners()
-        login()
     }
 
-    fun bindListeners(){
+    private fun bindListeners(){
         GotoSignUp.setOnClickListener{
             val intent=Intent(this,SignUpActivity::class.java)
             startActivity(intent)
