@@ -1,5 +1,6 @@
 package com.example.moneymanager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +20,10 @@ class ProfileActivity : AppCompatActivity() {
         Profile_view.setText(firebaseAuth.currentUser?.email.toString())
     }
     private fun bindListeners(){
-
+        logOut.setOnClickListener{
+            firebaseAuth.signOut()
+            val intent = Intent(this,LogInActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
