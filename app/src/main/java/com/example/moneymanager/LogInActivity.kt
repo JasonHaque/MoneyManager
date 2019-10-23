@@ -17,6 +17,7 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
         bindListeners()
+        checkUserStatus()
     }
 
     private fun bindListeners(){
@@ -40,7 +41,13 @@ class LogInActivity : AppCompatActivity() {
 
         firebaseAuth.signInWithEmailAndPassword(email,pass).addOnSuccessListener {
             Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
-            val intent=Intent(this,TimelineActivity::class.java)
+            val intent=Intent(this,ProfileActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun checkUserStatus(){
+        if(firebaseAuth.currentUser != null){
+            val intent=Intent(this,ProfileActivity::class.java)
             startActivity(intent)
         }
     }
