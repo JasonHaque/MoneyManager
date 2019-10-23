@@ -3,10 +3,12 @@ package com.example.moneymanager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
 
+    private var firebaseAuth=FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -30,6 +32,9 @@ class SignUpActivity : AppCompatActivity() {
         if(! pass.equals(confirm)){
             Toast.makeText(this,"Passwords Do not match",Toast.LENGTH_SHORT).show()
             return
+        }
+        firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnSuccessListener {
+            Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
         }
     }
 }
