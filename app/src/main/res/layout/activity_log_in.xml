@@ -39,6 +39,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
+        android:textSize="22sp"
+        android:layout_marginBottom="16dp"
         android:layout_gravity="center"/>
+    <TextView
+        android:text="@string/new_here_sign_up_now"
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/GotoSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textSize="22sp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"/>
+
 
 </LinearLayout>
