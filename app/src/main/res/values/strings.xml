@@ -7,4 +7,10 @@
     <string name="sign_up">Sign Up</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="logout">logout</string>
+    <string name="additional_details">Additional Details</string>
+    <string name="occupation">Occupation</string>
+    <string name="salary">Salary</string>
+    <string name="address">Address</string>
+    <string name="set_info">Set Info</string>
+    <string name="skip">Skip</string>
 </resources>
