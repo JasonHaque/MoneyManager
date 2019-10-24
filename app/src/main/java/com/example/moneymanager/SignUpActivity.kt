@@ -1,6 +1,7 @@
 package com.example.moneymanager
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -36,6 +37,8 @@ class SignUpActivity : AppCompatActivity() {
         }
         firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnSuccessListener {
             Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
+            val intent =Intent(this,AccountDetailsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
