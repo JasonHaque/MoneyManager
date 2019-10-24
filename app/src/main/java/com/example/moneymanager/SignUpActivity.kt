@@ -23,9 +23,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun signup(){
-        var email=signUpMail.text.toString()
-        var pass =signUpPassword.text.toString()
-        var confirm = ConfirmPassword.text.toString()
+        val email=signUpMail.text.toString()
+        val pass =signUpPassword.text.toString()
+        val confirm = ConfirmPassword.text.toString()
         if(email.isEmpty() || pass.isEmpty() || confirm.isEmpty()){
             Toast.makeText(this,"Fill in all the fields",Toast.LENGTH_SHORT).show()
             return

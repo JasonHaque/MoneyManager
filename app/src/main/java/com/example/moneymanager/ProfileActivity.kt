@@ -17,7 +17,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun bindWidgets(){
-        Profile_view.setText(firebaseAuth.currentUser?.email.toString())
+        Profile_view.text = firebaseAuth.currentUser?.email.toString()
     }
     private fun bindListeners(){
         logOut.setOnClickListener{

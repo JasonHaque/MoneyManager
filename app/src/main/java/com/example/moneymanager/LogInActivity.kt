@@ -1,10 +1,8 @@
 package com.example.moneymanager
 
-import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_log_in.*
@@ -32,8 +30,8 @@ class LogInActivity : AppCompatActivity() {
     }
 
     private fun login(){
-        var email = EmailField.text.toString()
-        var pass = PasswordField.text.toString()
+        val email = EmailField.text.toString()
+        val pass = PasswordField.text.toString()
         if(email.isEmpty() || pass.isEmpty()){
             Toast.makeText(this,"Fill up the fields Properly",Toast.LENGTH_SHORT).show()
             return
