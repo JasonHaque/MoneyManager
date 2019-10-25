@@ -31,6 +31,11 @@ class AccountDetailsActivity : AppCompatActivity() {
             }
             val new_salary= salary.toInt()
             val Data = UserData(occupation,new_salary,address)
+            dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString())
+                .setValue(Data).addOnSuccessListener {
+                    Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this,ProfileActivity::class.java))
+                }
         }
 
     }
