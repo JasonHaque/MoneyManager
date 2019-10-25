@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -15,6 +16,11 @@
     <Button
         android:id="@+id/logOut"
         android:text="@string/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/set_missing_attributes"
+        android:text="@string/set_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

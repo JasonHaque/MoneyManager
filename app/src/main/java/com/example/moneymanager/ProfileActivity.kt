@@ -25,5 +25,8 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(this,LogInActivity::class.java)
             startActivity(intent)
         }
+        set_missing_attributes.setOnClickListener {
+            startActivity(Intent(this,AccountDetailsActivity::class.java))
+        }
     }
 }
