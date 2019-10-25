@@ -1,5 +1,7 @@
 package com.example.moneymanager
 
-class UserData {
-
-}
+data class UserData (
+    val occupation : String="",
+    val salary : Int,
+    val address : String=""
+)
