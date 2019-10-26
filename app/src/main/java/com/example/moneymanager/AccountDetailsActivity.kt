@@ -38,27 +38,7 @@ class AccountDetailsActivity : AppCompatActivity() {
             dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
                 .setValue(Data).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
-                    val ref =dref.child("Users").child("Data")
-                        .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
-                    val listener = object : ValueEventListener {
-                        override fun onCancelled(p0: DatabaseError) {
-                            println("Not Implemented yet")
-                        }
-
-                        override fun onDataChange(dataSnapshot: DataSnapshot) {
-                            if (dataSnapshot.exists()){
-                                print(dataSnapshot)
-                                //val datasetter = dataSnapshot.getValue(UserData::class.java)
-                                //println(datasetter?.occupation+"         "+datasetter?.salary)
-                                //occupation_view.text= datasetter?.occupation
-                                //salary_view.text=datasetter?.salary.toString()
-                                //address_view.text=datasetter?.address
-                            }
-
-                        }
-
-                    }
-                    ref.addValueEventListener(listener)
+                    startActivity(Intent(this,ProfileActivity::class.java))
 
                 }
         }
