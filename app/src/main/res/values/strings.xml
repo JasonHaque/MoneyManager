@@ -13,4 +13,6 @@
     <string name="address">Address</string>
     <string name="set_info">Set Info</string>
     <string name="skip">Skip</string>
+    <string name="enter_your_spending_budget">Enter your spending budget</string>
+    <string name="set_budget">Set Budget</string>
 </resources>

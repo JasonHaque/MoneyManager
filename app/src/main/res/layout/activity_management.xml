@@ -4,9 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".ManagementActivity">
-    <TextView
-        android:text="Money Management"
+    <EditText
+        android:id="@+id/budget"
+        android:hint="@string/enter_your_spending_budget"
+        android:textSize="22sp"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/set_budget"
+        android:text="@string/set_budget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
