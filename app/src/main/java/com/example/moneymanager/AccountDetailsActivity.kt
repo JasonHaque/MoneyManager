@@ -38,7 +38,9 @@ class AccountDetailsActivity : AppCompatActivity() {
             dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
                 .setValue(Data).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this,ProfileActivity::class.java))
+                    val info :UserData =UserData(occupation,new_salary,address)
+                    val intent =Intent(this,ProfileActivity::class.java).putExtra("Info",info)
+                    startActivity(intent)
 
                 }
         }

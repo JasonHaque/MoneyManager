@@ -17,33 +17,18 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        setTitle("Profile")
+        val intent =intent
         bindWidgets()
         bindListeners()
     }
 
     private fun bindWidgets(){
         Profile_view.text = firebaseAuth.currentUser?.email.toString()
-        val ref =dref.child("Users").child("Data")
-            .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
-        val listener = object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-                println("Not Implemented yet")
-            }
-
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()){
-                    print(dataSnapshot.value)
-                    //val datasetter = dataSnapshot.getValue(UserData::class.java)
-                    //println(datasetter?.occupation+"         "+datasetter?.salary)
-                    //occupation_view.text= datasetter?.occupation
-                    //salary_view.text=datasetter?.salary.toString()
-                    //address_view.text=datasetter?.address
-                }
-
-            }
-
-        }
-        ref.addValueEventListener(listener)
+        val inf:UserData = intent.extras!!["Info"] as UserData
+        occupation_view.text= inf.occupation
+        salary_view.text=inf.salary.toString()
+        address_view.text=inf.address
 
     }
     private fun bindListeners(){
