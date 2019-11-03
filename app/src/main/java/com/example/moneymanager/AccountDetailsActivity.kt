@@ -23,7 +23,14 @@ class AccountDetailsActivity : AppCompatActivity() {
 
     fun bindListeners(){
         skip_attributes.setOnClickListener{
-            startActivity(Intent(this,ProfileActivity::class.java))
+            val occupation="Not set"
+            val salary = "0"
+            val address = "Not set"
+            val new_salary= salary.toInt()
+            val Data = UserData(occupation,new_salary,address)
+            val intent =Intent(this,ProfileActivity::class.java).putExtra("Info",Data)
+            startActivity(intent)
+
         }
         set_attributes.setOnClickListener{
             val occupation=occupation.text.toString()
