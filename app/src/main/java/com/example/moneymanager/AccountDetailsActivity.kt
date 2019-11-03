@@ -22,9 +22,13 @@ class AccountDetailsActivity : AppCompatActivity() {
             val salary = "0"
             val address = "Not set"
             val new_salary= salary.toInt()
-            val Data = UserData(occupation,new_salary,address)
-            val intent =Intent(this,ProfileActivity::class.java).putExtra("Info",Data)
-            startActivity(intent)
+            val data = UserData(occupation,new_salary,address)
+            dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
+                .setValue(data).addOnSuccessListener {
+                    val intent =Intent(this,ProfileActivity::class.java)
+                    startActivity(intent)
+                }
+
 
         }
         set_attributes.setOnClickListener{
@@ -40,8 +44,7 @@ class AccountDetailsActivity : AppCompatActivity() {
             dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
                 .setValue(data).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
-                    val info =UserData(occupation,newSalary,address)
-                    val intent =Intent(this,ProfileActivity::class.java).putExtra("Info",info)
+                    val intent =Intent(this,ProfileActivity::class.java)
                     startActivity(intent)
 
                 }
