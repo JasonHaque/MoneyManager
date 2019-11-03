@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_profile.*
 
 class ProfileActivity : AppCompatActivity() {
@@ -21,10 +24,31 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun bindWidgets(){
         Profile_view.text = firebaseAuth.currentUser?.email.toString()
-        val inf:UserData = intent.extras!!["Info"] as UserData
-        occupation_view.text= inf.occupation
-        salary_view.text=inf.salary.toString()
-        address_view.text=inf.address
+        val newref =dref.child("Users").child("Data").
+            child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
+        newref.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("Error receiving data")
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+
+                val children = p0!!.children
+                children.forEach{
+                    if(it.key.equals("address")){
+                        address_view.text=it.value.toString()
+                    }
+                    else if(it.key.equals("salary")){
+                        salary_view.text=it.value.toString()
+                    }
+                    else if(it.key.equals("occupation")){
+                        occupation_view.text=it.value.toString()
+                    }
+                }
+
+            }
+
+        })
 
     }
     private fun bindListeners(){

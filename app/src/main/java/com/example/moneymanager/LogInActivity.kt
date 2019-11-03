@@ -9,6 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.auth.User
 import kotlinx.android.synthetic.main.activity_log_in.*
 
 class LogInActivity : AppCompatActivity() {
@@ -51,24 +52,10 @@ class LogInActivity : AppCompatActivity() {
     }
     private fun checkUserStatus(){
         if(firebaseAuth.currentUser != null){
-            val newref =dref.child("Users").child("Data").
-                child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
-            newref.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError) {
-                    println("Error receiving data")
-                }
 
-                override fun onDataChange(p0: DataSnapshot) {
-                    val children = p0!!.children
-                    children.forEach{
-                        println(it.toString())
-                    }
-                }
 
-            })
-
-            //.val intent=Intent(this,ProfileActivity::class.java)
-            //startActivity(intent)
+            val intent=Intent(this,ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 }
