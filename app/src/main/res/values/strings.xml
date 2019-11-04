@@ -15,4 +15,8 @@
     <string name="skip">Skip</string>
     <string name="enter_your_spending_budget">Enter your spending budget</string>
     <string name="set_budget">Set Budget</string>
+    <string name="monthly_expenses">Monthly Expenses</string>
+    <string name="daily_expenses">Daily Expenses</string>
+    <string name="set_daily_expenses">Set Daily Expenses</string>
+    <string name="set_monthly_expenses">Set Monthly Expenses</string>
 </resources>
