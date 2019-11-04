@@ -17,6 +17,9 @@
     <string name="set_budget">Set Budget</string>
     <string name="monthly_expenses">Monthly Expenses</string>
     <string name="daily_expenses">Daily Expenses</string>
-    <string name="set_daily_expenses">Set Daily Expenses</string>
     <string name="set_monthly_expenses">Set Monthly Expenses</string>
+    <string name="set_daily_expenses">Set Daily Expenses</string>
+    <string name="area_of_expendture">Area of Expendture</string>
+    <string name="money_spent">Money Spent</string>
+    <string name="set_new_expense">Set New Expense</string>
 </resources>

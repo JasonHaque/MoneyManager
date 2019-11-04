@@ -4,9 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".SetDailyExpenseActivity">
     <TextView
-        android:text="Set Daily Expenses"
+        android:text="@string/set_daily_expenses"
         android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="42sp"
+        android:layout_marginBottom="200dp"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/area_of_expendture"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginBottom="10dp"
+        android:inputType="numberDecimal"
+        android:hint="@string/money_spent"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/set_new_expense"
+        android:layout_gravity="center"/>
 </LinearLayout>
