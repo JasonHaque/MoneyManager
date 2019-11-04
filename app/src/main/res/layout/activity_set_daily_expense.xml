@@ -15,6 +15,7 @@
         android:layout_marginBottom="200dp"
         android:layout_height="wrap_content"/>
     <EditText
+        android:id="@+id/area_of_Expenditure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="22sp"
@@ -22,6 +23,7 @@
         android:layout_marginBottom="10dp"
         android:hint="@string/area_of_expendture"/>
     <EditText
+        android:id="@+id/amount_daily"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="22sp"
@@ -29,6 +31,7 @@
         android:inputType="numberDecimal"
         android:hint="@string/money_spent"/>
     <Button
+        android:id="@+id/set_expenses_daily"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
