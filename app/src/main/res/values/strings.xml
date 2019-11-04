@@ -22,4 +22,7 @@
     <string name="area_of_expendture">Area of Expendture</string>
     <string name="money_spent">Money Spent</string>
     <string name="set_new_expense">Set New Expense</string>
+    <string name="month_name">Month Name</string>
+    <string name="monthly_amount">Monthly Amount</string>
+    <string name="set_limit">Set limit</string>
 </resources>

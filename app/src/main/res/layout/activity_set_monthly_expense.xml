@@ -14,5 +14,28 @@
         android:textSize="42sp"
         android:layout_marginBottom="200dp"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/monthly_limit"
+        android:hint="@string/month_name"
+        android:layout_width="match_parent"
+        android:textSize="22sp"
+        android:inputType="text"
+        android:layout_marginBottom="15dp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/monthly_amount"
+        android:hint="@string/monthly_amount"
+        android:layout_width="match_parent"
+        android:textSize="22sp"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="15dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/monthly_amount_setter"
+        android:text="@string/set_limit"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
