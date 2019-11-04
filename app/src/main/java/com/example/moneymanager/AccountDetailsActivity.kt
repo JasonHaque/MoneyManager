@@ -25,7 +25,7 @@ class AccountDetailsActivity : AppCompatActivity() {
             val data = UserData(occupation,new_salary,address)
             dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
                 .setValue(data).addOnSuccessListener {
-                    val intent =Intent(this,ProfileActivity::class.java)
+                    val intent =Intent(this,MoneySaverActivity::class.java)
                     startActivity(intent)
                 }
 
@@ -44,7 +44,7 @@ class AccountDetailsActivity : AppCompatActivity() {
             dref.child("Users").child("Data").child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
                 .setValue(data).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
-                    val intent =Intent(this,ProfileActivity::class.java)
+                    val intent =Intent(this,MoneySaverActivity::class.java)
                     startActivity(intent)
 
                 }

@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_log_in.*
 class LogInActivity : AppCompatActivity() {
 
     private var firebaseAuth=FirebaseAuth.getInstance()
-    private var dref =FirebaseDatabase.getInstance().getReference()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,9 +51,7 @@ class LogInActivity : AppCompatActivity() {
     }
     private fun checkUserStatus(){
         if(firebaseAuth.currentUser != null){
-
-
-            val intent=Intent(this,ProfileActivity::class.java)
+            val intent=Intent(this,MoneySaverActivity::class.java)
             startActivity(intent)
         }
     }
