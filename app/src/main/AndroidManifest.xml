@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SetDailyExpenseActivity"></activity>
+        <activity android:name=".SetMonthlyExpenseActivity"></activity>
+        <activity android:name=".SetDailyExpenseActivity" />
         <activity android:name=".MonthlyExpenseActivity" />
         <activity android:name=".DailyExpenseActivity" />
         <activity android:name=".MoneySaverActivity" />
