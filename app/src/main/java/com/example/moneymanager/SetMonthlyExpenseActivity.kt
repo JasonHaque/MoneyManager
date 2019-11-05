@@ -3,6 +3,7 @@ package com.example.moneymanager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_set_monthly_expense.*
@@ -23,7 +24,13 @@ class SetMonthlyExpenseActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             val amount =monthlyLimit.toInt()
-
+            val monthdata=MonthlyData(monthName,amount)
+            dref.child("Users").child("expense").child("monthly")
+                .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0]).setValue(monthdata)
+                .addOnSuccessListener {
+                    Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
+                    return@addOnSuccessListener
+                }
         }
     }
 }
