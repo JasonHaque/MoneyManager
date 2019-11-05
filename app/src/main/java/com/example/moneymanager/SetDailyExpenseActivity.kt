@@ -23,11 +23,15 @@ class SetDailyExpenseActivity : AppCompatActivity() {
     }
     private fun bindListeners(){
         set_expenses_daily.setOnClickListener {
-            val ExpenseName =area_of_Expenditure.text.toString()
-            val ExpenseAmount =amount_daily.text.toString()
+            val expenseName =area_of_Expenditure.text.toString()
+            val expenseAmount =amount_daily.text.toString()
 
-            if(ExpenseName.isEmpty() || ExpenseAmount.isEmpty()){
+            if(expenseName.isEmpty() || expenseAmount.isEmpty()){
                 Toast.makeText(this,"Fill up the fields properly",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(expenseAmount.toIntOrNull() == null){
+                Toast.makeText(this,"Enter your amount properly",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
         }
