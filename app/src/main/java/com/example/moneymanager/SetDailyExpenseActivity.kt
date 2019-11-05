@@ -17,8 +17,7 @@ class SetDailyExpenseActivity : AppCompatActivity() {
         bindListeners()
     }
     private fun bindWidgets(){
-        dref =FirebaseDatabase.getInstance().reference.child("Users").child("DailyExpenses")
-            .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0])
+        dref =FirebaseDatabase.getInstance().reference
 
     }
     private fun bindListeners(){
@@ -34,6 +33,20 @@ class SetDailyExpenseActivity : AppCompatActivity() {
                 Toast.makeText(this,"Enter your amount properly",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            val amount = expenseAmount.toInt()
+            val dailyUse:dailyData = dailyData(expenseName,amount)
+            println("Starting")
+            dref.child("Users").child("expense").child("daily")
+                .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0]).setValue(dailyUse).addOnSuccessListener {
+                println("Success")
+                Toast.makeText(this,"Successfully Saved Data",Toast.LENGTH_SHORT).show()
+                return@addOnSuccessListener
+            }.addOnFailureListener {
+                Toast.makeText(this,"Failure",Toast.LENGTH_SHORT).show()
+                println(it.toString())
+                return@addOnFailureListener
+            }
+            return@setOnClickListener
         }
     }
 }
