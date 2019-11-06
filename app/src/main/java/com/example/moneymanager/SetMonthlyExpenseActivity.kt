@@ -26,10 +26,13 @@ class SetMonthlyExpenseActivity : AppCompatActivity() {
             val amount =monthlyLimit.toInt()
             val monthdata=MonthlyData(monthName,amount)
             dref.child("Users").child("expense").child("monthly")
-                .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0]).setValue(monthdata)
+                .child(FirebaseAuth.getInstance().currentUser?.email.toString().split("@")[0]).child(monthName+"").setValue(monthdata)
                 .addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
                     return@addOnSuccessListener
+                }.addOnFailureListener{
+                    Toast.makeText(this, "Failed$it",Toast.LENGTH_SHORT).show()
+                    return@addOnFailureListener
                 }
         }
     }
