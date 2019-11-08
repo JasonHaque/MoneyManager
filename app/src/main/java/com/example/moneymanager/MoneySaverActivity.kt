@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_money_saver.*
 
 class MoneySaverActivity : AppCompatActivity() {
@@ -35,6 +37,21 @@ class MoneySaverActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.profile_id ->{
+                startActivity(Intent(this,ProfileActivity::class.java))
+                return true
+            }
+            R.id.log_out_menu ->{
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this,LogInActivity::class.java))
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }
