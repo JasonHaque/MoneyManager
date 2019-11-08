@@ -25,4 +25,5 @@
     <string name="month_name">Month Name</string>
     <string name="monthly_amount">Monthly Amount</string>
     <string name="set_limit">Set limit</string>
+    <string name="profile">Profile</string>
 </resources>
