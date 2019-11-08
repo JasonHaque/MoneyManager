@@ -3,6 +3,7 @@ package com.example.moneymanager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import kotlinx.android.synthetic.main.activity_money_saver.*
 
 class MoneySaverActivity : AppCompatActivity() {
@@ -30,4 +31,10 @@ class MoneySaverActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
 }
