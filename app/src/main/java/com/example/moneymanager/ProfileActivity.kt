@@ -60,6 +60,9 @@ class ProfileActivity : AppCompatActivity() {
         set_missing_attributes.setOnClickListener {
             startActivity(Intent(this,AccountDetailsActivity::class.java))
         }
+        go_to_timeline.setOnClickListener {
+            startActivity(Intent(this,MoneySaverActivity::class.java))
+        }
 
     }
 }
