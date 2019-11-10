@@ -15,7 +15,7 @@ class MoneySaverActivity : AppCompatActivity() {
         setContentView(R.layout.activity_money_saver)
         bindListeners()
     }
-    fun bindListeners(){
+    private fun bindListeners(){
         monthly_expenses.setOnClickListener {
             val intent =Intent(this,MonthlyExpenseActivity::class.java)
             startActivity(intent)

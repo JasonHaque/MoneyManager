@@ -16,7 +16,7 @@ class AccountDetailsActivity : AppCompatActivity() {
         bindListeners()
     }
 
-    fun bindListeners(){
+    private fun bindListeners(){
         skip_attributes.setOnClickListener{
             val occupation="Not set"
             val salary = "0"
